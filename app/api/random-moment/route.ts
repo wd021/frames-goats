@@ -35,6 +35,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
+          action: 'post',
+          label: 'Random 🐐 Moment',
+        },
+        {
           action: 'link',
           label: '👀 Watch the Reel',
           target: randomNft.video,
@@ -46,12 +50,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
       ],
       image: {
-        src: randomNft.img,
+        src: 'https://frames.goatcollection.xyz/images/' + randomKey + '.png',
         aspectRatio: '1:1',
       },
       ogDescription: 'The Metaverse’s Hall of Fame 🐐🔥',
       ogTitle: 'Goat Collection',
-      // postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      postUrl: `${NEXT_PUBLIC_URL}/api/random-moment`,
     }),
   );
 }
