@@ -2,11 +2,11 @@
   "1": {
     "title": "⚽ Eden Hazard wins the Premier league 🏆 for Chelsea",
     "video": "https://www.youtube.com/shorts/WLhWCNc_IFU",
-    "mint": "eip155:base:0x20d8a0a289c2ef6b7cf18bb8e68f533325610150<:1>"
+    "mint": "eip155:base:0x20d8a0a289c2ef6b7cf18bb8e68f533325610150:1"
   },
   "2": {
     "title": "🏎️ 23 year old Lewis Hamilton wins 1st F1 🏆",
     "video": "https://www.youtube.com/shorts/Ud89R8Bi9NI",
-    "mint": "eip155:base:0x20d8a0a289c2ef6b7cf18bb8e68f533325610150<:2>"
+    "mint": "eip155:base:0x20d8a0a289c2ef6b7cf18bb8e68f533325610150:2"
   }
 }
