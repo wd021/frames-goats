@@ -37,7 +37,13 @@ export async function generateMetadata(
     });
 
     return {
-      title: nft.title,
+      title: 'Goat Collection',
+      description: 'The Metaverse’s Hall of Fame 🐐🔥',
+      openGraph: {
+        title: 'Goat Collection',
+        description: 'The Metaverse’s Hall of Fame 🐐🔥',
+        images: [`${NEXT_PUBLIC_URL}/goats.png`],
+      },
       other: {
         ...frameMetadata,
       },
