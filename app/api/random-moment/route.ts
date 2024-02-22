@@ -35,14 +35,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     getFrameHtmlResponse({
       buttons: [
         {
+          action: 'link',
+          label: '👀 Watch the Reel',
+          target: randomNft.video,
+        },
+        {
           action: 'mint',
           label: 'Mint',
           target: randomNft.mint,
         },
       ],
       image: {
-        src: randomNft.image,
+        src: randomNft.img,
       },
+      ogDescription: 'The Metaverse’s Hall of Fame 🐐🔥',
+      ogTitle: 'Goat Collection',
       // postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
     }),
   );
