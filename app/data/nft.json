@@ -1,8 +1,8 @@
 {
-  "0xc550b2e9f2634688dad01ac7f9b8bac65fb35d83": {
+  "1": {
     "title": "⚽ Eden Hazard wins the Premier league 🏆 for Chelsea",
     "video": "https://www.youtube.com/shorts/WLhWCNc_IFU",
     "img": "https://remote-image.decentralized-content.com/image?url=https%3A%2F%2Fipfs.decentralized-content.com%2Fipfs%2Fbafybeifjxenhq2rq2aiyc37jpxffxepdsxn6tuppp5wtqm5zyf57bzdhdi&w=1920&q=75",
-    "mint": "eip155:7777777:0x060f3edd18c47f59bd23d063bbeb9aa4a8fec6df"
+    "mint": "eip155:7777777:0xc550b2e9f2634688dad01ac7f9b8bac65fb35d83<1>"
   }
 }

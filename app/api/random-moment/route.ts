@@ -47,6 +47,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       ],
       image: {
         src: randomNft.img,
+        aspectRatio: '1:1',
       },
       ogDescription: 'The Metaverse’s Hall of Fame 🐐🔥',
       ogTitle: 'Goat Collection',
