@@ -21,9 +21,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           target: randomNft.video,
         },
         {
-          action: 'mint',
+          action: 'link',
           label: 'Mint',
-          target: randomNft.mint,
+          target: randomNft.zora,
         },
       ],
       image: {

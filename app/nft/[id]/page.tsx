@@ -25,9 +25,9 @@ export async function generateMetadata(
           target: nft.video,
         },
         {
-          action: 'mint',
+          action: 'link',
           label: 'Mint',
-          target: nft.mint,
+          target: nft.zora,
         },
       ],
       image: {
