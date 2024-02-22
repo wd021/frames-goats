@@ -74,7 +74,9 @@ export async function generateMetadata(
     };
   }
 
-  return null;
+  return {
+    title: 'Not found',
+  };
 }
 
 export default function Page({ params, searchParams }: Props) {
