@@ -60,15 +60,21 @@ export async function generateMetadata(
   // get data from nftData
   const product = nftData[id as keyof typeof nftData];
 
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
+  if (product) {
+    console.log('product', product);
 
-  return {
-    title: product.title,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
-  };
+    // optionally access and extend (rather than replace) parent metadata
+    // const previousImages = (await parent).openGraph?.images || [];
+
+    return {
+      title: product.title,
+      // openGraph: {
+      //   images: ['/some-specific-page-image.jpg', ...previousImages],
+      // },
+    };
+  }
+
+  return null;
 }
 
 export default function Page({ params, searchParams }: Props) {
