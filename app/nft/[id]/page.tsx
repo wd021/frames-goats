@@ -9,68 +9,38 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-const frameMetadata = getFrameMetadata({
-  buttons: [
-    {
-      label: 'Story time!',
-    },
-    {
-      action: 'link',
-      label: 'Link to Google',
-      target: 'https://www.google.com',
-    },
-    {
-      label: 'Redirect to pictures',
-      action: 'post_redirect',
-    },
-  ],
-  image: {
-    src: `${NEXT_PUBLIC_URL}/park-3.png`,
-    aspectRatio: '1:1',
-  },
-  input: {
-    text: 'Tell me a boat story',
-  },
-  postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
-});
-
-// export const metadata: Metadata = {
-//   title: 'Goat Collection',
-//   description: 'The Metaverse’s Hall of Fame 🐐🔥',
-//   openGraph: {
-//     title: 'Goat Collection',
-//     description: 'The Metaverse’s Hall of Fame 🐐🔥',
-//     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
-//   },
-//   other: {
-//     ...frameMetadata,
-//   },
-// };
-
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  // read route params
   const id = params.id;
+  const nft = nftData[id as keyof typeof nftData];
 
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
-
-  // get data from nftData
-  const product = nftData[id as keyof typeof nftData];
-
-  if (product) {
-    console.log('product', product);
-
-    // optionally access and extend (rather than replace) parent metadata
-    // const previousImages = (await parent).openGraph?.images || [];
+  if (nft) {
+    const frameMetadata = getFrameMetadata({
+      buttons: [
+        {
+          action: 'link',
+          label: '👀 Watch Reel',
+          target: nft.video,
+        },
+        {
+          action: 'mint',
+          label: 'Mint',
+          target: nft.mint,
+        },
+      ],
+      image: {
+        src: 'https://frames.goatcollection.xyz/images/' + id + '.png',
+        aspectRatio: '1:1',
+      },
+    });
 
     return {
-      title: product.title,
-      // openGraph: {
-      //   images: ['/some-specific-page-image.jpg', ...previousImages],
-      // },
+      title: nft.title,
+      other: {
+        ...frameMetadata,
+      },
     };
   }
 

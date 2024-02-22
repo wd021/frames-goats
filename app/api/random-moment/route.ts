@@ -4,29 +4,6 @@ import { NEXT_PUBLIC_URL } from '../../config';
 import { getRandomKey } from '../../../utils/helpers';
 import nftData from '../../data/nft.json';
 
-/*
-function getNextAndPrevKeys<T>(
-  obj: T,
-  currentKey: keyof T,
-): { next: keyof T | null; prev: keyof T | null } {
-  const keys = Object.keys(obj) as Array<keyof T>;
-  const currentIndex = keys.indexOf(currentKey);
-
-  // Ensure the current key exists
-  if (currentIndex === -1) {
-    return { next: null, prev: null };
-  }
-
-  const nextIndex = currentIndex + 1;
-  const prevIndex = currentIndex - 1;
-
-  const nextKey = keys[nextIndex] !== undefined ? keys[nextIndex] : null;
-  const prevKey = keys[prevIndex] !== undefined ? keys[prevIndex] : null;
-
-  return { next: nextKey, prev: prevKey };
-}
-*/
-
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const randomKey = getRandomKey(nftData);
   const randomNft: any = nftData[randomKey];
@@ -36,11 +13,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       buttons: [
         {
           action: 'post',
-          label: 'Random 🐐 Moment',
+          label: '🔄 Random',
         },
         {
           action: 'link',
-          label: '👀 Watch the Reel',
+          label: '👀 Watch Reel',
           target: randomNft.video,
         },
         {
