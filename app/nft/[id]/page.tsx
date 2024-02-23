@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit/core';
 import type { Metadata, ResolvingMetadata } from 'next';
-import { NEXT_PUBLIC_URL } from '../../config';
+import { NEXT_PUBLIC_URL, ZORA_URL } from '../../config';
 
 import nftData from '../../data/nft.json';
 
@@ -27,7 +27,7 @@ export async function generateMetadata(
         {
           action: 'link',
           label: 'Mint',
-          target: nft.zora,
+          target: ZORA_URL + id,
         },
       ],
       image: {
