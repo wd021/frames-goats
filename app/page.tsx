@@ -10,7 +10,7 @@ const frameMetadata = getFrameMetadata({
   ],
   image: {
     src: `${NEXT_PUBLIC_URL}/goats.png`,
-    aspectRatio: '1:1',
+    // aspectRatio: '1:1',
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/random-moment`,
 });
